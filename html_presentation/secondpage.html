@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="libs/qi.js"></script>
+<script src="js/script.js"></script>
+
+<style>
+.shadow
+ {
+			text-shadow: 2px 2px 4px #000000;
+	}
+
+* {
+  box-sizing: border-box;
+}
+.border {
+       width:225px;
+       border-style:solid;
+       border:2px solid black;
+     }
+
+
+
+.column {
+  float: left;
+  width: 30.00%;
+  padding: 50px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.main {
+  text-align: center;
+}
+button{
+   border: border:5px white;;
+   cursor: pointer;
+   appearance: none;
+   background-color: inherit;
+   transition: transform .7s ease-in-out;
+   margin-left:50px;
+   margin-top:100px;
+   color: orange;
+   font-family: fantasy;
+   display: inline-block;
+   font-size: 300%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.bounce {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+        background-image: url("backgrounds/davinciquizz.gif");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+h1 {
+  color: whitesmoke;
+  font-family: fantasy;
+  font-size: 300%;
+}
+
+</style>
+</head>
+
+
+
+<body onload="MyFunction()">
+
+<div class="main">
+<h3>
+  <h1 class="bounce shadow" ><b>Salut Les Champion.es et bienvenu.es au musée !</b></h1>
+</h3>
+</div>
+  
+    
+
+    <div class="row">
+      <div class="column">
+        <button class="button" id="Map" style="width: 300px; height: 250px;" value="Map"> <a href="secondmap.html"><img src="quizzicons/map.jpg" alt="Map" style="width: 100%; height: 100%;"></a></button>
+      </div>
+      <div class="column">
+	<div class="button"></div>
+         <button id="Davinci" style="width: 300px; height: 250px;" value="Davinci"> <a href="homepagequizz.html"><img src="quizzicons/map.jpg" alt="Davinci" style="width: 100%; height: 100%;"></a></button>
+      </div>
+      <div class="column">
+         <button class="button" id="Quizz" style="width: 300px; height: 250px;" value="Quizz" ><a href="quizz2.html"><img src="quizzicons/peintres.pg" alt="Quizz" style="width: 100%; height: 100%;"></a></button>
+      </div>
+    </div>
+  
+
+<script>
+
+  function MyFunction(){
+
+  say('Salut les enfants ,,,,bienvenus au musee ! Aujourdui pleins de jeux vous attendent!.... Nous allons tous ensemble decouvrir pleins de choses sur davinci tout en samusant! ....Avant tout, il faut aller au plan du musee,,, ou pleins de jeux et dindices seront cacher!   Donc faites bien attention et ecoutez tres attentivement!.   Pour decouvrir le plan du musee cliquer sur le bouton plan du musee tout a gauche!   Aprais avoir vu le plan du musee ....cliquer sur le boutton du milieu qui nous explique un peu plus sur devinci!      Aussi a la fin il y aura un qwiz qui est le bouton tout a droite  pour voir si vous avez bien compris!   est ce que vous etes prets?')
+
+ }
+ </script>
+
+
+</body>
+</html>

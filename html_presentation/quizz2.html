@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<script src="libs/qi.js"></script>
+	<script src="js/script.js"></script>
+	
+	<style>
+	.shadow
+	 {
+		text-shadow: 2px 2px 4px #000000;
+	}
+	
+	* {
+	  box-sizing: border-box;
+	}
+	.border {
+		   width:225px;
+		   border-style:solid;
+		   border:2px solid black;
+		 }
+	
+	.main {
+	  
+	  margin-left: 200px;
+	}
+	button{
+	 border: none;
+	 cursor: pointer;
+  	 appearance: none;
+  	 background-color: inherit;
+  	 transition: transform .7s ease-in-out;
+  	 margin-left:1000px;
+ 	 margin-top:-300px;
+}
+	.center {
+	  text-align: center;
+	  
+	}
+	
+	.column {
+	  float: left;
+	  width: 40.33%;
+	  padding: 0px;
+	  margin-left: 10px;
+	}
+         .quiztext{
+	  font-size: 24px;
+	  font-family: fantasy;
+	  font-weight: bold;
+	  color:rgb(68,41,5);
+	}
+	
+	/* Clearfix (clear floats) */
+	.row::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	
+	input[type="radio"]{
+	transform: scale(1.75);
+	}
+	
+	
+	body {
+			background-image: url("backgrounds/davinciquizz.gif");
+			background-repeat: repeat;
+			background-size: cover;
+		  }
+	<!--gif-->
+	
+	body {
+	 margin: 0px;
+	 padding: 0px;
+	
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 font-size: 24px;
+	 color: #fff;
+	 background: #000;
+	 
+	}
+			
+	.gif-container {
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 min-width: 100%;
+	 min-height: 100%;
+	 z-index: -1;
+	 background: url(cofetti_image.gif) no-repeat center center fixed;
+	 background-size: cover;
+	}
+	
+	
+	h1 {
+	  color: whitesmoke;
+	  font-family: fantasy;
+	  font-size: 400%;
+	}
+	h2 {
+	  color: rgb(111, 74, 27);
+	  font-family: fantasy;
+	  font-size: 250%;
+	}
+	h3 {
+	  color: whitesmoke;
+	  font-family: apple chancery;
+	  font-size: 150%;
+	}
+	h4 {
+	  color: blue;
+	  font-family: apple chancery;
+	  font-size: 150%;
+	}
+	
+	
+	
+</style>
+
+	<h1 class="center shadow">Quizz</h1>
+	<script>
+		function checksoloAnswers(q) {
+			switch (q) {
+				case 1:
+					if(document.forms["quiz"]["q1"].value == "b")
+						document.getElementById("q1true").innerHTML = "bravo!";
+					else
+						document.getElementById("q1true").innerHTML = "Essaie encore";
+					break;
+				case 2:
+					if(document.forms["quiz"]["q2"].value == "c")
+						document.getElementById("q2true").innerHTML = "bravo!";
+					else
+						document.getElementById("q2true").innerHTML = "Essaie encore";
+					break;
+				case 3:
+					if(document.forms["quiz"]["q3"].value == "b")
+						document.getElementById("q3true").innerHTML = "bravo!";
+					else
+						document.getElementById("q3true").innerHTML = "Essaie encore";
+					break;
+				case 4:
+					if(document.forms["quiz"]["q4"].value == "c")
+						document.getElementById("q4true").innerHTML = "bravo!";
+					else
+						document.getElementById("q4true").innerHTML = "Essaie encore";
+					break;
+			}
+		}
+		function checkAnswers() {
+			var score = 0;
+			
+			var q1 = document.forms["quiz"]["q1"].value;
+			var q2 = document.forms["quiz"]["q2"].value;
+			var q3 = document.forms["quiz"]["q3"].value;
+			var q4 = document.forms["quiz"]["q4"].value;
+
+			
+			if (q1 == "b") {
+				score++;
+				
+			}
+			if (q2 == "c") {
+				score++;
+				
+			}
+			if (q3 == "b") {
+				score++;
+				
+			}
+			if (q4 == "c") {
+				score++;
+				
+			}
+			
+			document.getElementById("myVar").innerHTML = score;
+		    if(score==4){
+			   	document.body.style.backgroundImage = "url('backgrounds/cofetti_image.gif')";
+		           setTimeout(function() {document.location.href = "index.html";
+			                                }, 4000);
+				document.getElementById("felicitations").innerHTML = "Felicitations!";
+			   	say(' Bravo champion')
+
+			}
+			else{document.getElementById("felicitations").innerHTML = "Presque!";
+				say(' Bravo Ty es presque champion')
+				
+			}
+			 
+		}
+
+	</script>
+</head>
+
+
+
+<body>
+	
+	
+	<form name="quiz">
+	
+	<div class="main">
+	<div class="row">
+        <div class="column">
+		<h2 class="shadow">Question 1</h2>
+		<h3 class="shadow">Quel a été le métier de Léonard de Vinci?</h3>
+		<div class="quiztext">
+		<input type="radio" name="q1" value="a"> Geographe <br>
+		<input type="radio" name="q1" value="b"> Inventeur<br>
+		<input type="radio" name="q1" value="c"> Peintre<br>
+		<input type="radio" name="q1" value="d"> Clown<br>
+		<br>
+		</div>
+		<input type="button" value="Verifier la Question 1" onclick="checksoloAnswers(1)">
+		<p> <span id="q1true"></span></p>
+	   </div>
+	
+        <div class="column">	
+		<h2 class="shadow">Question 2</h2>
+		<h3 class="shadow">Quel était le rêve de Léonard de Vinci?</h3>
+		<div class="quiztext">
+		<input type="radio" name="q2" value="a"> Devenir médecin<br>
+		<input type="radio" name="q2" value="b"> Manger des glaces<br>
+		<input type="radio" name="q2" value="c"> Voler<br>
+		<input type="radio" name="q2" value="d"> Devenir chanteur d'Opera<br>
+		<br>
+		</div>
+		<input type="button" value="Verifier la Question 2 " onclick="checksoloAnswers(2)">
+		<p> <span id="q2true"></span></p>
+	    </div>
+	</div>
+	<div class="row">
+           <div class="column">	
+		<h2 class="shadow">Question 3</h2>
+		<h3 class="shadow">Laquelle de ces inventions a été de Léonard de Vinci?</h3>
+		<div class="quiztext">
+		<input type="radio" name="q3" value="a"> Le parachute<br>
+		<input type="radio" name="q3" value="b"> La bicyclette<br>
+		<input type="radio" name="q3" value="c"> Le four à Pizza<br>
+		<input type="radio" name="q3" value="d"> Le Pepper Robot<br>
+		<br>
+		</div>
+		<input type="button" value="Verifier la Question 3" onclick="checksoloAnswers(3)">
+		<p> <span id="q3true"></span></p>
+	   </div>
+	   <div class="column">
+
+		<h2 class="shadow">Question 4</h2>
+		<h3 class="shadow">Quelle est la peinture la plus connue de Léonard de Vinci?</h3>
+		<div class="quiztext">
+		<input type="radio" name="q4" value="a"> Départ pour le bal <br>
+		<input type="radio" name="q4" value="b"> Ma photo de classe <br>
+		<input type="radio" name="q4" value="c"> La joconde <br>
+		<input type="radio" name="q4" value="d"> Il ne peignait pas <br>
+		<br>
+		</div>
+		<input type="button" value="Verifier la Question 4" onclick="checksoloAnswers(4)">
+		<p> <span id="q4true"></span></p>
+	   </div>
+	</div>
+	</div>
+		<br>
+		<div class="center">
+		<h2>
+		<p style="border:1px solid powder blue"><a href="javascript:checkAnswers()">Valider</a></p>
+	    	</h2>
+		</div>
+		
+	</form>
+   <div class="center">
+	<h4>
+	<p> <span id="myVar"></span>
+	<span id="felicitations"></span></p>
+	</h4>
+  <div class="button"></div>
+    <button  id="bienvenu" style="width: 400px; height: 300px;" value="bienvenu"> <a href="secondpage.html"><img src="quizzicons/pepper.png" alt="Quizz 1" style="width: 100%; height: 100%;"> </a> </button>
+	
+  </div>
+</body>
+</html>
