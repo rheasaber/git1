@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="libs/qi.js"></script>
+<script src="js/script.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+.border {
+       width:225px;
+       border-style:solid;
+       border:2px solid black;
+     }
+
+
+
+.column {
+  float: left;
+  width: 45.00%;
+  padding: 50px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.main {
+  text-align: center;
+}
+button{
+   border: none;;
+   cursor: pointer;
+   appearance: none;
+   background-color: inherit;
+   transition: transform .7s ease-in-out;
+   margin-left:100px;
+   margin-top:500px;
+   color: orange;
+   font-family: fantasy;
+   font-size: 300%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.bounce {
+  animation: bounce 3s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+        background-image: url("quizzicons/flyingmachine.gif");
+        background-repeat: no-repeat;
+        background-size: auto 130%;
+	
+        background-position-x:-300px;
+        background-position-y:0px ;
+      }
+h1 {
+  color: rgb(95, 157, 218);
+  font-family: fantasy;
+  font-size: 300%;
+}
+
+</style>
+</head>
+
+
+
+<body onload="MyFunction()">
+
+<div class="main">
+<h3>
+  <h1 class="bounce"><b> L'avion </b></h1>
+</h3>
+</div>
+  
+    
+
+    <div class="row">
+      <div class="column">
+        <button class="button" id="gauche" style="width: 200px; height: 100px;" value="gauche" > <a href="homepagedavinci.html"><img src="quizzicons/gauche.png" alt="gauche" style="width: 100%; height: 100%;"></a></button>
+      </div>
+      <!-- <div class="column">
+         <button class="button" id="droite" style="width: 200px; height: 100px;" value="droite" ><a href="quizz2.html"><img src="quizzicons/droite.png" alt="droite" style="width: 100%; height: 100%;"></a></button>
+      </div> -->
+    </div>
+  
+
+    <script>
+      function MyFunction(){
+       say('de Vinci était fasciné par l’univers aérien, le vol et les oiseaux...   Son reve était de voler. Avec les recherches quil a fait,, il commença à avoir des idées sur des machines volantes....   Il conçut donc quelques croquis sur  des machines volantes dont un avion ; un hélicoptère et un deltaplane!..   Ce n’est pas lui qui a réellement inventé ces objets mais il fut un précurseur en apportant l’idée aux futurs inventeurs.')
+     
+      }
+
+
+      </script>
+
+
+</body>
+</html>

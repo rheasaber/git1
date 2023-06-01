@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<script src="libs/qi.js"></script>
+<script src="js/script.js"></script>
+
+<style>
+
+
+.shadow
+ {
+			text-shadow: 2px 2px 4px #000000;
+	}
+* {
+  box-sizing: border-box;
+}
+.border {
+       width:225px;
+       border-style:solid;
+       border:2px whitesmoke;
+     }
+
+
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.main {
+  text-align: center;
+}
+button{
+   border: whitesmoke;
+   cursor: pointer;
+   appearance: none;
+   background-color: inherit;
+   transition: transform .7s ease-in-out;
+    margin-left:10px;
+}
+/* button:hover{
+              transform: rotate(360deg);
+            } */
+h1 {
+  color: whitesmoke;
+  font-family: fantasy;
+  font-size: 300%;
+}
+
+input[type="email"]{
+              padding:10px;
+              border:2px solid #314de4;
+              outline :none;
+              border-radius:5px;
+              font-size:24px;
+              color:#314de4;
+            }
+
+
+body {
+        background-image: url("backgrounds/davinciquizz.gf");
+        background-repeat: no-repeat;
+        background-size: 2000px;
+	background-position-y:0px ;
+      }
+
+
+</style>
+</head>
+
+
+
+<body onload="MyFunction()">
+
+
+<h1 class="main shadow"> Léonard de Vinci</h1>
+
+<div class="center">
+ <div class="row">
+  <div class="column">
+    <button  id="davinci" style="width: 300px; height: 275px;" value="davinci"><a href="bicyclette.html"> <img src="quizzicons/davincibicyclette.jpeg" alt="Quizz 1" style="width: 100%; height: 100%;"></a></button>
+  </div>
+  <div class="column">
+    <button id="joconde" style="width: 300px; height: 275px;" value="joconde"><a href="joconde.html"><img src="quizzicons/davincipeintures.jpeg" alt="Quizz 2" style="width: 100%; height: 100%;"></a></button>
+  </div>
+  <div class="column">
+    <button id="voler" style="width: 300px; height: 275px;" value="voler" ><a href="voler.html"><img src="quizzicons/davinciinventions.jpeg" alt="Quizz 3" style="width: 100%; height: 100%;"></a></button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <button class="button" id="retour" style="width: 300px; height: 275px;" value="retour" ><a href="secondpage.html"><img src="quizzicons/retour.png" alt="Quizz 1" style="width: 100%; height: 100%;"></a></button>
+  </div>
+  <div class="column">
+    <button class="button" id="frida" style="width: 300px; height: 275px;" value="frida"><img src="quizzicons/davinciarchitecture.jpeg" alt="Quizz 2" style="width: 100%; height: 100%;"></button>
+  </div>
+  <div class="column">
+    <button class="button" id="pepper" style="width: 300px; height: 250px;" value="pepper"><a href="secondpage.html"><img src="quizzicons/pepper.png" alt="Quizz 3" style="width: 100%; height: 100%;"></a></button>
+  </div>
+</div><br>
+</body>
+<body>
+
+<div class="main">
+<h1>
+	<p id="ciao"> </p>
+</h1>
+</div>
+
+<script>
+
+
+
+
+  function MyFunction(){
+       say('Et nous voila chez Leonardo de vinci....  Leonardo De vinci est née le 14 avril 1452 a ankiano en italie...   Il était un grand peintre, sculteur, architecte, inventeur, philosophe et ingenieur...    Grace a cette page-ci, on va découvrir touuus les talents de de vinci....   Pour en savoir plus sur chaque talent clicker sur les bottons!. Soyez attentif parceque il y aura un qwiz lié a chaquin de ces boutons...')
+
+}
+ function redirectToIndex(){
+	location.href="index.html";
+	}
+ var timeout = setTimeout (redirectToIndex,180000);
+ document.addEventListener("click",function(){clearTimeout(timeout);});
+  
+
+
+
+
+</script>
+
+</body>
+</html>
